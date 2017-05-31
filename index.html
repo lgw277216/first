@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<link rel="stylesheet" href="css/jquery.fullpage.css" />
+		<link rel="stylesheet" href="css/animate.css" />
+		<style>
+			.section{
+				text-align: center;
+				font-size: 100px;
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="dowebok">
+		    <div class="section page01">第一屏</div>
+		    <div class="section page02">第二屏</div>
+		    <div class="section page03">
+		        <div class="slide">第三屏的第一屏</div>
+		        <div class="slide">第三屏的第二屏</div>
+		        <div class="slide">第三屏的第三屏</div>
+		        <div class="slide">第三屏的第四屏</div>
+		    </div>
+		    <div class="section page04">第四屏</div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript" src="js/jquery.fullpage.js" ></script>
+		<script type="text/javascript">
+			
+			$(function(){
+        		$('#dowebok').fullpage({
+        			sectionsColor : ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+        			navigation:true,
+        			slidesNavigation:true,
+        			loopBottom:true,
+        			continuousVertical: true,
+        			afterLoad: function(anchorLink, index){
+        			/*if(index == 1){
+        				$(".page01").addClass("animated bounceInLeft ");
+        			}
+        			else if(index == 2){
+        				$(".page02").addClass("animated bounceInLeft ");
+        			}
+        			else if(index == 3){
+        				$(".page03").addClass("animated bounceInLeft ");
+        			}
+        			else if(index == 4){
+        				$(".page04").addClass("animated bounceInLeft ");
+        			}*/
+        			/*if(index ==3){
+        				
+        			}*/
+        			}
+        		});
+        		
+        		setInterval(function(){
+        			$.fn.fullpage.moveSectionDown();
+        		},2000);
+        		
+    		});
+			
+		</script>
+	</body>
+</html>
